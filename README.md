@@ -1,0 +1,3 @@
+# swift-rfc-4291-coder
+
+Wire coding for the IPv6 address types of [swift-rfc-4291](https://github.com/swift-ietf/swift-rfc-4291): `RFC_4291.IPv6.Address.Coder` (the RFC 4291 section 2.2 text grammar over a byte cursor, serializing the section 2.2.1 fully expanded form), the `Text.Full` and `Text.IPv4Mixed` ASCII serializers, and the `ASCII.Parseable`, `ASCII.Serializable`, `Binary.Parseable` and `Binary.Serializable` conformances (the expanded text form and sixteen network-order octets). The domain package stays free of parser and serializer dependencies; add the product `RFC 4291 Coder` to any target that reads or writes addresses on the wire.
