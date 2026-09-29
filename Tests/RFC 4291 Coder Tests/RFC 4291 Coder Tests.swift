@@ -1,13 +1,9 @@
 import ASCII
-import ASCII_Serializer
 import Binary_Parseable
-import Binary_Serializable
+import Binary
 import Byte
-import Byte_Standard_Library_Integration
 import Coder
-import Coder_Standard_Library_Integration
-import Cursor_Standard_Library_Integration
-import Parseable_ASCII
+import Cursor
 import Parser
 import RFC_4291
 import RFC_4291_Coder

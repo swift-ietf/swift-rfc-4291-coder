@@ -1,6 +1,4 @@
 public import ASCII
-public import ASCII_Serializer
-public import Parseable_ASCII
 public import RFC_4291
 
 extension RFC_4291.IPv6.Address: @retroactive ASCII.Parseable {}

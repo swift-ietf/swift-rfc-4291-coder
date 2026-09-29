@@ -1,5 +1,5 @@
 public import Binary_Parseable
-public import Binary_Serializable
+public import Binary
 public import Byte
 public import RFC_4291
 
