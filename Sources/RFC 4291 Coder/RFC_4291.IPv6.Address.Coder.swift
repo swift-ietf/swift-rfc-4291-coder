@@ -54,5 +54,3 @@ extension RFC_4291.IPv6.Address {
 
     public static var coder: Coder<ArraySlice<Byte>, [Byte]> { .init() }
 }
-
-extension RFC_4291.IPv6.Address: Coder.Codable {}

@@ -4,7 +4,7 @@ public import Serializer
 
 extension RFC_4291.IPv6.Address.Text {
 
-    public struct IPv4Mixed: Serializer.`Protocol` {
+    public struct IPv4Mixed: Serializer::Serializing {
         public init() {}
     }
 }
@@ -73,7 +73,7 @@ extension RFC_4291.IPv6.Address.Text.IPv4Mixed {
     }
 }
 
-extension Serializer.`Protocol` where Self == RFC_4291.IPv6.Address.Text.IPv4Mixed {
+extension Serializer::Serializing where Self == RFC_4291.IPv6.Address.Text.IPv4Mixed {
 
     public static var ipv4Mixed: RFC_4291.IPv6.Address.Text.IPv4Mixed { .init() }
 }

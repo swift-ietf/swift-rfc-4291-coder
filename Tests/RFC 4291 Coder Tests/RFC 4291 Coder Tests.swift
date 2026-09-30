@@ -54,15 +54,15 @@ extension `RFC 4291 Coder Tests`.`Address Coder Tests` {
     @Test
     func `serializes the fully expanded form (RFC 4291 section 2.2.1)`() throws {
         let address = RFC_4291.IPv6.Address(0x2001, 0x0db8, 0, 0, 0, 0, 0, 1)
-        #expect(try address.encoded() == "2001:0db8:0000:0000:0000:0000:0000:0001")
+        #expect(try RFC_4291.IPv6.Address.coder.serialize(address) == "2001:0db8:0000:0000:0000:0000:0000:0001")
     }
 
     @Test
     func `round-trips through decoding and encoding`() throws {
         var input: ArraySlice<Byte> = "fe80::1"
-        let address = try RFC_4291.IPv6.Address(decoding: &input)
-        var reread: ArraySlice<Byte> = try address.encoded()[...]
-        #expect(try RFC_4291.IPv6.Address(decoding: &reread) == address)
+        let address = try RFC_4291.IPv6.Address.coder.parse(&input)
+        var reread: ArraySlice<Byte> = try RFC_4291.IPv6.Address.coder.serialize(address)[...]
+        #expect(try RFC_4291.IPv6.Address.coder.parse(&reread) == address)
     }
 }
 
@@ -170,6 +170,6 @@ extension `RFC 4291 Coder Tests`.`Text Conformance Tests` {
         RFC_4291.IPv6.Address.serialize(address, into: &wire)
         #expect(wire == address.bytes)
         #expect(try RFC_4291.IPv6.Address(ascii: address.serialized) == address)
-        #expect(try address.encoded() == address.serialized)
+        #expect(try RFC_4291.IPv6.Address.coder.serialize(address) == address.serialized)
     }
 }

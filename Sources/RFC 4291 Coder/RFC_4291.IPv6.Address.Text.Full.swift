@@ -4,7 +4,7 @@ public import Serializer
 
 extension RFC_4291.IPv6.Address.Text {
 
-    public struct Full: Serializer.`Protocol` {
+    public struct Full: Serializer::Serializing {
         public init() {}
     }
 }
@@ -42,7 +42,7 @@ extension RFC_4291.IPv6.Address.Text.Full {
     }
 }
 
-extension Serializer.`Protocol` where Self == RFC_4291.IPv6.Address.Text.Full {
+extension Serializer::Serializing where Self == RFC_4291.IPv6.Address.Text.Full {
 
     public static var full: RFC_4291.IPv6.Address.Text.Full { .init() }
 }

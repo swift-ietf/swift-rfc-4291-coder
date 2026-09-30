@@ -8,7 +8,7 @@ extension RFC_4291.IPv6.Address {
 
 extension RFC_4291.IPv6.Address {
 
-    public static func serialize<S: Serializer.`Protocol`>(
+    public static func serialize<S: Serializer::Serializing>(
         _ address: RFC_4291.IPv6.Address,
         into buffer: inout S.Buffer,
         serializer: borrowing S
