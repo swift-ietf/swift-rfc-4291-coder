@@ -5,11 +5,6 @@ public import Serializer
 extension RFC_4291.IPv6.Address.Text {
 
     public struct IPv4Mixed: Serializer::Serializing {
-        public var body: Never {
-            borrowing get {
-                return fatalError("\(Self.self) is a leaf: implement its conformance requirements directly")
-            }
-        }
 
         public init() {}
     }
