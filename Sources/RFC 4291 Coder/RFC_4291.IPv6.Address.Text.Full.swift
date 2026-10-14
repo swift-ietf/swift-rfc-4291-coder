@@ -1,6 +1,6 @@
 public import ASCII
 public import RFC_4291
-public import Serializer
+import Serializer
 
 extension RFC_4291.IPv6.Address.Text {
 
